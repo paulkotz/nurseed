@@ -1,7 +1,13 @@
 <section class="home-content main">
 		<div class="container">
 			<div class="row home-feature">
-				<div class="col-sm-6 xs-full-width"><div class="l-margin-n10"><img src="$HomeImage.URL" alt=" " class="homepage-feature-image"></div></div>
+				<div class="col-sm-6 xs-full-width">
+					<div class="l-margin-n10 slideshow">
+						<% loop HomeSlides %>
+							<% with SlideImage %><% with CroppedImage(480,300) %><img src="$URL" alt=" " class="homepage-feature-image slide"><% end_with %><% end_with %>
+						<% end_loop %>
+					</div>
+				</div>
 				<div class="col-sm-6">
 					<div class="home-feature-text">
 						$Content

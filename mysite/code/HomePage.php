@@ -16,6 +16,10 @@ class HomePage extends Page {
 		'DevelopmentBoxLink' => 'SiteTree'
 	);
 
+	static $has_many = array(
+		'HomeSlides' => 'HomeSlide'
+		);
+
 
 	function getCMSFields(){
 		$fields = parent::getCMSFields();
@@ -40,6 +44,26 @@ class HomePage extends Page {
 		$fields->addFieldToTab('Root.DevelopmentBox', new TextField('DevelopmentBoxTitle', 'Development Box Title'));
 		$box3linkfield = new TreeDropdownField("DevelopmentBoxLinkID", "Development Box Link", "SiteTree");
 		$fields->addFieldToTab('Root.DevelopmentBox', $box3linkfield, '');
+
+		// HOME SLIDES
+		$slideGridFieldConfig = GridFieldConfig::create()->addComponents(
+			new GridFieldToolbarHeader(),
+			new GridFieldAddNewButton('toolbar-header-right'),
+			new GridFieldSortableHeader(),
+			new GridFieldDataColumns(),
+			new GridFieldPaginator(20),
+			new GridFieldEditButton(),
+			new GridFieldDeleteAction(),
+			new GridFieldDetailForm(),
+			new GridFieldSortableRows('SortOrder')
+		);
+			
+		$slideGridField = new GridField("HomeSlides", "HomeSlides", $this->HomeSlides(), $slideGridFieldConfig);
+		$columns = $slideGridField->getConfig()->getComponentByType('GridFieldDataColumns');
+		$columns->setDisplayFields(array(
+			'Title' => 'Title'
+		));
+		$fields->addFieldToTab("Root.HomeSlides", $slideGridField);
 
 
 		return $fields;

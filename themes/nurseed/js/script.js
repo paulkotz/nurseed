@@ -12,8 +12,20 @@ function mobileMenuButtonClick(button){
 }
 
 $(document).ready(function(){
+
+	$('.slideshow').slick({
+	 	slide: ".slide",
+	 	dots: true,
+	 	arrows: false,
+	 	autoplay: true,
+  		autoplaySpeed: 6000,
+  		speed: 800
+	});
+
 	$(".generic-drop-down").chosen({disable_search:true});
 });
+
+
 
 
 /* Fired when the window has been resized */
