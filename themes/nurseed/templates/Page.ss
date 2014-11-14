@@ -3,8 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<% base_tag %>
-	<title><% if $MetaTitle %>$MetaTitle<% else %>$Title<% end_if %> &raquo; $SiteConfig.Title</title>
+	<title>$SiteConfig.Title &raquo; <% if $MetaTitle %>$MetaTitle<% else %>$Title<% end_if %>  </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<META NAME="robots" CONTENT="index, follow">
+	$MetaTags(false)
 
 	<link rel="stylesheet" type="text/css" href="{$ThemeDir}/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="{$ThemeDir}/css/styles.css">
