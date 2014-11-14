@@ -168,6 +168,7 @@ header .search-container form{
 	border-radius: 4px;
 	margin-top:10px;
 	background:#f6f6f6;
+	white-space: nowrap;
 }
 
 header .search-container input[type="search"]{
@@ -214,62 +215,149 @@ header .search-container input[type="submit"]:hover{
 
 
 /* Nav and page title */
-section.top-nav .container{
-	background-color: #ffffff;
-	min-height: 140px;
+section.top-nav .container, 
+section.top-nav .container .row{
+	position: relative;
+}
+section.top-nav .container .row{
+	background: #ffffff;
 }
 section.top-nav .site-logo{
 	position: relative;
 	display: block;
-	top: 57px;
-	margin-left: 20px;
+	margin: 40px 0 12px 34px;
 }
-
-img.header-logo{
-	width:155px;
-}
-
 section.top-nav .site-logo h1{
+}
+section.top-nav .site-logo div{
 	display: inline-block;
-	font-size:1.8em;
+	font-size: 1.500em;
+	line-height: 50px;
+	font-weight: 400;
 }
-section.top-nav .site-logo h1 span{
-	white-space:nowrap;
-	color:#999999;
-}
+
+section.top-nav .site-logo div span.grey{
+	color:#a5a9ac;
+	}
 
 
 
 /* Top nav (full) */
 @media (min-width: 768px){
 	section.top-nav nav{
-		position: relative;
-		top:35px;
+		position:relative;
+		z-index:100;
+	}
+
+	section.top-nav nav{
+		margin: 0 -10px;
 	}
 	section.top-nav nav ul{
-		padding: 6px 0;
+		width:100%;
+		display:table;
 	}
-	section.top-nav nav ul li{
+	section.top-nav nav > ul > li{
+		/*float: left;
+		width: 16.66666667%;*/
 		position: relative;
-		float: left;
-		width: 50%;
-		margin: 6px 0;
+		display:table-cell;
+
+		background-image: url("../images/white-pix.png");
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		background-position: 0px 0px;
+
+		-webkit-transition: background-position 0.1s ease;
+		-moz-transition: background-position 0.1s ease;
+		-ms-transition: background-position 0.1s ease;
+		-o-transition: background-position 0.1s ease;
+		transition: background-position 0.1s ease;
 	}
-	section.top-nav nav ul li a{
+	section.top-nav nav > ul > li > a{
+		display: block;
+		padding: 0 29px;
+		line-height: 62px;
+		height: 62px;
 		font-size: 1.125em;
-		line-height: 16px;
+		text-align: center;
+		color: #5879a1;
 	}
-	section.top-nav nav ul li.current a{
-		color: #286ace;
+	section.top-nav nav > ul > li > a > div{
+		white-space: nowrap;
+	}
+	section.top-nav nav ul li:hover{
+		background-position: 0px -5px;	/* Could look better */
+	}
+	
+	section.top-nav nav > ul > li:hover{
+		background-color:#f0f1f1;
+	}
+	section.top-nav nav > ul > li:hover > a{
+		color: #333;
+	}
+
+	section.top-nav nav ul li.current,
+	section.top-nav nav ul li.section{
 		font-weight: 700;
+		background-position: 0px -10px;
 	}
+
+	section.top-nav nav > ul > li:first-child > a,
+	section.top-nav nav > ul > li:last-child > a
+	{
+		padding: 0 42px 0 43px;
+	}
+
 	section.top-nav ul.sub-menu{
 		display: none;
 	}
+
+	section.top-nav nav ul li:hover .sub-menu {
+		display: block;
+		position: absolute;
+		width:100%;
+		/*background-color:#f0f1f1;*/
+	}
+
+	section.top-nav nav .sub-menu li a{
+		display: block;
+		border-top: 1px solid #d8d8d8;
+		padding: 1em;
+		padding-right: 15%;
+
+		background: url(../images/link-arrow-dark-compressed.png) 90% 50% no-repeat;
+		background-color: #f0f1f1;
+
+		-webkit-transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+		-o-transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+		transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+	}
+
+	section.top-nav nav .sub-menu li.current a{
+		font-weight:700;
+	}
+
+	section.top-nav nav .sub-menu li:hover a{
+		background-color: #fff;
+		background-color: rgba(255, 255, 255, 0.98);
+		background-position: 91% 50%;
+		color:#3a5474;
+	}
 }
+
 
 /* Top nav (mobile) */
 @media (max-width: 767px){
+
+	.nav-col{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		min-height: 0;
+		padding: 0px;
+	}
+
 	header.top-bar{
 		font-size: 1.125em;
 		height: 50px;
@@ -304,7 +392,7 @@ section.top-nav .site-logo h1 span{
 		right: 0;
 		left:0;
 		height: 0;
-		margin: 0 -10px;
+		margin: 0 0px;
 		z-index: 100;
 	}
 	section.top-nav nav button{
@@ -333,7 +421,7 @@ section.top-nav .site-logo h1 span{
 		background-size: 75% 14px;
 		background-repeat: no-repeat;
 
-		padding: 25px 0 40px 30px;
+		padding: 25px 10px 40px 30px;
 	}
 	section.top-nav nav.mobile-open > ul{
 		display: block;
@@ -389,7 +477,6 @@ section.top-nav .site-logo h1 span{
 }
 
 
-
 /* Page titles */
 section.page-title .container{
 	background: #286ace;
@@ -416,6 +503,7 @@ section.home-content .home-feature{
 }
 section.home-content .homepage-feature-image{
 	width: 100%;
+	height: auto;
 }
 
 section.home-content .home-feature-text{
@@ -456,6 +544,7 @@ section.home-content .featured-item-container .text{
 section.home-content .featured-item-container .summary{
 	font-size: 1.500em;
 	line-height: 1.25em;
+	word-wrap: break-word;
 }
 section.home-content .featured-item-container .link{
 	display: block;

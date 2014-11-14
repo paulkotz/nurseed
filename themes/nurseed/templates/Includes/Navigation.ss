@@ -2,7 +2,14 @@
 		<section class="top-nav">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-6 col-sm-push-6">
+		
+				<div class="col-sm-12">
+					<a href="home" class="site-logo">
+						<h1><img src="{$ThemeDir}/images/ALFH-logo-lg2.jpg" alt="The Alfred Logo Image" class="header-logo"> <span>Nursing Education</span></h1>
+					</a>
+				</div>
+
+				<div class="col-sm-12 nav-col">
 					<nav>
 						<button type="button" class="mobile-menu-button visible-xs" onclick="mobileMenuButtonClick(this)">Menu</button>
 						<ul class="clearfix">
@@ -25,11 +32,7 @@
 						<div class="nav-bottom-shadow"></div>
 					</nav>
 				</div>
-				<div class="col-sm-6 col-sm-pull-6">
-					<a href="home" class="site-logo">
-						<h1><img src="{$ThemeDir}/images/ALFH-logo-lg2.jpg" alt="The Alfred Logo Image" class="header-logo"> <span>Nursing Education</span></h1>
-					</a>
-				</div>
+				
 			</div>
 		</div>
 	</section>
