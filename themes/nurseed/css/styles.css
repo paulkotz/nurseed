@@ -215,6 +215,11 @@ header .search-container input[type="submit"]:hover{
 
 
 /* Nav and page title */
+
+section.top-nav{
+	background:url("../images/section-nav-bg-80.png") bottom left repeat-x;
+}
+
 section.top-nav .container, 
 section.top-nav .container .row{
 	position: relative;
@@ -280,7 +285,8 @@ section.top-nav .site-logo div span.grey{
 		height: 62px;
 		font-size: 1.125em;
 		text-align: center;
-		color: #4161d0;
+		color: #286ace;
+		border-top: solid 5px #f0f1f1;
 	}
 	section.top-nav nav > ul > li > a > div{
 		white-space: nowrap;
@@ -300,6 +306,11 @@ section.top-nav .site-logo div span.grey{
 	section.top-nav nav ul li.section{
 		font-weight: 700;
 		background-position: 0px -10px;
+	}
+
+	section.top-nav nav ul li.current a,
+	section.top-nav nav ul li.section a{
+		border-color: #286ace;
 	}
 
 	section.top-nav nav > ul > li:first-child > a,
@@ -335,6 +346,13 @@ section.top-nav .site-logo div span.grey{
 
 	section.top-nav nav .sub-menu li.current a{
 		font-weight:700;
+		border-color: #d8d8d8;
+	}
+
+
+	section.top-nav nav ul li.current .sub-menu li a,
+	section.top-nav nav ul li.section .sub-menu li a{
+		border-color: #d8d8d8;
 	}
 
 	section.top-nav nav .sub-menu li:hover a{
@@ -478,6 +496,11 @@ section.top-nav .site-logo div span.grey{
 
 
 /* Page titles */
+
+section.page-title{
+	background: rgba(40,106,206, 0.8);
+}
+
 section.page-title .container{
 	background: #286ace;
 }
@@ -491,8 +514,11 @@ section.page-title .container{
 
 
 /* HOME PAGE */
-section.home-content{
-
+section.main.home-content{
+	background-image: url("../images/gray-pix2.png"), url("../images/home-content-main-bg-80.png");
+	background-position: left bottom, top left;
+	background-size: 1px 27px, 10px 1000px; 
+	background-repeat: repeat-x, repeat-x;
 }
 section.home-content .container{
 	background-color: #ffffff;	
@@ -708,7 +734,7 @@ section.main.content-page nav.right-nav{
 }
 
 section.main{
-	background-image: url("../images/gray-pix2.png");
+	background-image: url("../images/gray-pix2.png")
 	background-position: left bottom;
 	background-size: 1px 27px; 
 	background-repeat: repeat-x;
